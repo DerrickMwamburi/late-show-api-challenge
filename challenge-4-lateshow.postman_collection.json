@@ -1,0 +1,141 @@
+{
+    "info": {
+        "name": "Late Show API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Register",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"username\": \"testuser\", \"password\": \"testpass\"}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{base_url}}/register",
+                    "host": ["{{base_url}}"],
+                    "path": ["register"]
+                }
+            }
+        },
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"username\": \"testuser\", \"password\": \"testpass\"}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{base_url}}/login",
+                    "host": ["{{base_url}}"],
+                    "path": ["login"]
+                }
+            }
+        },
+        {
+            "name": "Get Episodes",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/episodes",
+                    "host": ["{{base_url}}"],
+                    "path": ["episodes"]
+                }
+            }
+        },
+        {
+            "name": "Get Episode",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/episodes/1",
+                    "host": ["{{base_url}}"],
+                    "path": ["episodes", "1"]
+                }
+            }
+        },
+        {
+            "name": "Delete Episode",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/episodes/1",
+                    "host": ["{{base_url}}"],
+                    "path": ["episodes", "1"]
+                }
+            }
+        },
+        {
+            "name": "Get Guests",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/guests",
+                    "host": ["{{base_url}}"],
+                    "path": ["guests"]
+                }
+            }
+        },
+        {
+            "name": "Create Appearance",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"rating\": 4, \"guest_id\": 1, \"episode_id\": 1}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{base_url}}/appearances",
+                    "host": ["{{base_url}}"],
+                    "path": ["appearances"]
+                }
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:5000"
+        },
+        {
+            "key": "token",
+            "value": ""
+        }
+    ]
+}
